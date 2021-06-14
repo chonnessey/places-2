@@ -7,12 +7,12 @@ function Place(location, landmarks, year) {
 }
 
 
-let portland = new Place("Portland", ["Burnside Bridge", "Moda Center"], "Fall")
+let portland = new Place("Portland", ["Burnside Bridge ", "Moda Center"], "Fall")
 
-let austin = new Place("Austin", ["Texas capitol building", "Mckinney Falls Parlk"]
+let austin = new Place("Austin", ["Texas capitol building ", "Mckinney Falls Parlk"]
 , "winter")
 
-let mexico = new Place("Sinaloa", ["Mazatlan", "Guamuchil"], "Summer")
+let mexico = new Place("Sinaloa", ["Mazatlan ", "Guamuchil "], "Summer")
 
 
 // UI logic
@@ -22,25 +22,25 @@ $(document).ready(function() {
   const mexicoKeys = Object.keys(mexico);
   let mexicoString = "";
   mexicoKeys.forEach(function(key) {
-    mexicoString = mexicoString.concat(key + ":" + mexico [key] + "\n" );
+    mexicoString = mexicoString.concat(key + ":" + "<li>" + mexico[key] + "</li>");
   });
-  $(".page-mexico").append("<li>" + mexicoString + "</li>");
+  $(".page-mexico").append(mexicoString);
   })
 
   $("#portland").click(function() {
   const portlandKeys = Object.keys(portland);
   let portlandString = "";
   portlandKeys.forEach(function(key) {
-    portlandString = portlandString.concat(key + ":" + portland [key] + "\n" );
+    portlandString = portlandString.concat(key + ":" + "<li>"+ portland[key] + "</li>" );
   });
-  $(".page-portland").append("<li>" + portlandString + "</li>");
+  $(".page-portland").append( portlandString );
   })
   $("#austin").click(function() {
   const austinKeys = Object.keys(austin);
   let austinString = "";
   austinKeys.forEach(function(key) {
-    austinString = austinString.concat(key + ":" + austin [key] + "\n" );
+    austinString = austinString.concat(key + ":" + "<li>"+ austin[key] + "</li>" );
   });
-  $(".page-austin").append("<li>" + austinString + "</li>");
+  $(".page-austin").append(austinString );
   })
 })
